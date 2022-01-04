@@ -17,12 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
-import st1
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('board/', include('board.urls')),
+    path('', include('verb.urls')),
     path('accounts/', include('accounts.urls')),
-
 ]

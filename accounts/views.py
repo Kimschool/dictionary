@@ -8,7 +8,7 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             User.objects.create_user(request.POST['username'], password=request.POST['password1'])
         return redirect('index')
-    return render(request, 'test/signup.html')
+    return render(request, 'init/signup.html')
 
 
 def login(request):
@@ -21,9 +21,9 @@ def login(request):
             auth.login(request, user)
             return redirect('index')
         else:
-            return render(request, 'test/login.html', {'error':'username or password incorrect'})
+            return render(request, 'init/login.html', {'error': 'username or password incorrect'})
     else:
-        return render(request, 'test/login.html')
+        return render(request, 'init/login.html')
 
 def logout(request):
     auth.logout(request)
