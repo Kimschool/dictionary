@@ -17,7 +17,8 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    # path('', views.list),
-    path('verb/', views.index, name='verb'),
+    path('verb/', views.search, name='verb'),
+    path('verb/search/', views.search, name='search'),
+    path('verb/list/', views.index, name='list'),
     path('verb/reg/', views.reg, name='reg'),
 ]

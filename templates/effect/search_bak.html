@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>オノマトペ辞書 - 検索</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
+        <div class="container d-flex justify-content-between">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+                <strong>オノマトペ辞書</strong>
+            </a>
+        </div>
+    </div>
+</header>
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="input-group">
+                        <form action="/verb/search/" class="row w-100"  method="post">
+                            {% csrf_token %}
+                            <input type="search" class="form-control rounded col-8" name="word" placeholder="ハングルを入力で検索" aria-label="Search" aria-describedby="search-addon" />
+                            <button class="btn btn-outline-primary offset-1 col-3" type="submit">検索</button>
+                        </form>
+                        <a class="btn btn-outline-warning row w-100" href="reg">登録</a>
+                        <br>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
